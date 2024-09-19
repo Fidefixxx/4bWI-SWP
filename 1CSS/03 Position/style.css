@@ -1,0 +1,21 @@
+div{
+    border: 2px solid black;
+    height: 50px;
+}
+
+.div1{
+    background: red;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.div2{
+    background: orange;
+    position: absolute;
+    bottom: 5px;
+}
+
+.div3{
+    background: yellow;
+}
