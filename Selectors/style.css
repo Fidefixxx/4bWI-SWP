@@ -1,0 +1,25 @@
+div{
+    background-color: bisque;
+}
+
+.header{
+    background-color: aqua;
+    font-size: 2rem;
+    font-weight: bold;
+    border: solid 2px black;
+}
+.header:hover{
+    background-color: aquamarine;
+    font-size: 1.9rem;
+    border:solid 4px gray;
+}
+
+.subtitle{
+    color: blueviolet;
+    border: 1px;
+    font-weight: bold;
+}
+
+.text{
+    color:blue;
+}
