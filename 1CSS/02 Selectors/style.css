@@ -2,7 +2,8 @@ div{
     background-color: bisque;
 }
 
-.header{
+
+#header{
     background-color: aqua;
     font-size: 2rem;
     font-weight: bold;
@@ -22,4 +23,13 @@ div{
 
 .text{
     color:blue;
+}
+
+.footer{
+    border: 3px solid orange;
+    font-size: 1.2rem;
+}
+
+.footer p{
+    background: red;
 }
