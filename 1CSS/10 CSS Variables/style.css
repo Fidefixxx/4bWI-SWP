@@ -1,0 +1,32 @@
+*{
+    font-size: 18px;
+    --font-size-big: 2rem;
+    --font-size-medium: 1.5rem;
+    --font-size-normal: 0.8rem;
+    --main-color: rgb(239, 8, 54);
+}
+
+.header{
+    color: var(--main-color);
+    font-size: var(--font-size-big);
+    font-weight: bold;
+}
+
+.subheader{
+    font-size: var(--font-size-medium);
+    font-weight: 200;
+}
+
+.container1{
+    background-color: var(--main-color);
+    font-size: var(--font-size-normal);
+}
+
+.container2{
+    border: 3px solid var(--main-color);
+    font-size: var(--font-size-normal);
+}
+
+.footer{
+    font-size: var(--font-size-medium);
+}
