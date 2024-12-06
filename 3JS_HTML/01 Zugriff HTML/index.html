@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        A <input type="text" id="input1">
+        B <input type="text" id="input2">
+        <br>
+        <input type="radio" name="operation" id="add" checked>
+        <label for="add">Addition</label>
+        <input type="radio" name="operation" id="subtract">
+        <label for="subtract">Subtraction</label>
+        <input type="radio" name="operation" id="multiply">
+        <label for="multiply">Multiplication</label>
+        <input type="radio" name="operation" id="divide">
+        <label for="divide">Division</label>
+        <br>
+        <button onclick="ButtonClick()" id="button">Calculate</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
