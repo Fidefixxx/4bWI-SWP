@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
-        A <input type="text" id="input1">
-        B <input type="text" id="input2">
+        <input type="text" id="input1" placeholder="Enter first number">
+        <input type="text" id="input2" placeholder="Enter second number">
         <br>
-        <input type="radio" name="operation" id="add" checked>
-        <label for="add">Addition</label>
-        <input type="radio" name="operation" id="subtract">
-        <label for="subtract">Subtraction</label>
-        <input type="radio" name="operation" id="multiply">
-        <label for="multiply">Multiplication</label>
-        <input type="radio" name="operation" id="divide">
-        <label for="divide">Division</label>
-        <br>
+        <div class="radio-group">
+            <div class="radio-item">
+                <input type="radio" name="operation" id="add" checked>
+                <label for="add">Addition</label>
+            </div>
+
+            <div class="radio-item">
+                <input type="radio" name="operation" id="subtract">
+                <label for="subtract">Subtraction</label>
+            </div>
+
+            <div class="radio-item">
+                <input type="radio" name="operation" id="multiply">
+                <label for="multiply">Multiplication</label>
+            </div>
+
+            <div class="radio-item">
+                <input type="radio" name="operation" id="divide">
+                <label for="divide">Division</label>
+            </div>
+        </div>
         <button onclick="ButtonClick()" id="button">Calculate</button>
-        <p id="result"></p>
+        <div id="calculation"></div>
     </div>
 </body>
 </html>
