@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+    padding: 10;
+    margin: 5;
+}
+
+li {
+    padding:5;
+}
+
+#liga {
+    
+    overflow-y: auto;
+    position: relative;
+    bottom: auto;
+}
