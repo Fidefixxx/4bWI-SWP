@@ -7,10 +7,20 @@ ul {
 li {
     padding:5;
 }
-
 #liga {
-    
-    overflow-y: auto;
     position: relative;
-    bottom: auto;
+}
+.searchmenu{
+
+    display: flex;
+    align-items:start;
+    padding-bottom: 30px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+td{
+    padding-left: 10px;
+    padding-right: 10px;
 }

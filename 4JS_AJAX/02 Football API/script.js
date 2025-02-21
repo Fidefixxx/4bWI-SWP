@@ -60,14 +60,14 @@ function filterDropdown() {
 }
 
 function getHTMLforTODO(data) {
-    let html = "<ul style='list-style: none; padding: 0;'>";
+    let html = "<table class='table'><tr><th>Logo</th><th>Team</th><th>Name</th></tr>";
     data.forEach(team => {
         html += `
-        <li style="display: flex; align-items: center; gap: 10px;">
-            <img src="${team.teamIconUrl}" alt="${team.teamName}" 
-                style="width:50px; height:auto;">
-            ${team.teamName} (${team.shortName})
-        </li>
+        <tr class='tablerow'>
+            <td><img src="${team.teamIconUrl}" alt="${team.teamName}"style="width:50px; height:auto;"></td>
+            <td>${team.teamName}</td>
+            <td>${team.shortName}</td>
+        </tr>
         `;
     });
     html += "</ul>";

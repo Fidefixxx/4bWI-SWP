@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bundesligen</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
-    <h1>Liga-Auswahl</h1>
+    <h1 class="text-3xl mb-5">Liga-Auswahl</h1>
+        <div class="flex items-start">
+            <label class="px-5" for="ligaSearch">Liga suchen:</label>
+            <input class="border bg-gray-200 p-1"type="text" id="ligaSearch" placeholder="Liga eingeben..." oninput="filterDropdown()">
 
-    <label for="ligaSearch">Liga suchen:</label>
-    <input type="text" id="ligaSearch" placeholder="Liga eingeben..." oninput="filterDropdown()">
+            <label class="px-5" for="liga">Liga auswählen:</label>
+            <select class="border bg-gray-200 p-1 hover:cursor-pointer" id="liga" size="5"></select>
 
-    <label for="liga">Liga auswählen:</label>
-    <select id="liga" size="3">
-    </select>
+            <label class="px-5" for="season">Saison:</label>
+            <input class="border bg-gray-200 px-1"id="season" type="number" min="1900" max="2099" step="1" value="2016" />
+            
+            <button class="border-blue rounded-md ml-3 p-2 bg-blue-600 text-white hover:bg-blue-800 hover:text-gray-200 hover:cursor-pointer" id="load">load data</button>
+            
 
-    <label for="season">Saison:</label>
-    <input id="season" type="number" min="1900" max="2099" step="1" value="2016" />
-    
-    <button id="load">load data</button>
-    <div id="content"></div>
+        </div>
+        <div id="content"></div>
 
 </body>
 </html>
