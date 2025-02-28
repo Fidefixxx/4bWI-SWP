@@ -10,7 +10,7 @@ document.getElementById("load").addEventListener("click", function () {
     fetch(`https://api.openligadb.de/getavailableteams/${list[0]}/${list[1]}`)
         .then((result) => result.json())
         .then((data) => {
-            getHTMLforTODO(data);
+            getHTMLforTeam(data);
             console.log(data);
         })
         .catch(error => console.error("Fehler beim Abrufen der Teams:", error));
@@ -21,7 +21,7 @@ function getInfo() {
     let season = document.getElementById("season").value;
     console.log(liga, season);
     return [liga, season];
-}
+};
 
 async function loadLeagues() {
     const url = "https://api.openligadb.de/getavailableleagues";
@@ -47,7 +47,7 @@ async function loadLeagues() {
     } catch (error) {
         console.error("Fehler beim Laden der Ligen:", error);
     }
-}
+};
 
 function filterDropdown() {
     let input = document.getElementById("ligaSearch").value.toLowerCase();
@@ -57,19 +57,31 @@ function filterDropdown() {
         let text = options[i].text.toLowerCase();
         options[i].style.display = text.includes(input) ? "" : "none";
     }
-}
-
-function getHTMLforTODO(data) {
-    let html = "<table class='table'><tr><th>Logo</th><th>Team</th><th>Name</th></tr>";
+};
+function openTeam(teamname){
+    let link = 'https://www.google.com/search?q='+teamname;
+    window.open(link); 
+};
+document.getElementById("content").addEventListener("click", (event) => {
+    console.log(event.target.getAttribute("teamname"))
+    openTeam(event.target.getAttribute("teamname"))
+});
+function getHTMLforTeam(data) {
+    let index = 0;
+    let html = "<table class='border border-separate border-spacing-1'><tr class='border'><th class='border'>Logo</th><th class='border'>Team</th><th class='border'>Name</th></tr>";
     data.forEach(team => {
         html += `
-        <tr class='tablerow'>
-            <td><img src="${team.teamIconUrl}" alt="${team.teamName}"style="width:50px; height:auto;"></td>
-            <td>${team.teamName}</td>
-            <td>${team.shortName}</td>
+        <tr class='border'>
+            <td class='border'>
+                <img teamname="${team.teamName}" src="${team.teamIconUrl}" alt="${team.teamName}"style="width:50px; height:auto;">
+            </td>
+            <td class='border px-3'>${team.teamName}</td>
+            <td class='border px-5'>${team.shortName}</td>
         </tr>
         `;
+        index++;
     });
     html += "</ul>";
+    
     document.getElementById("content").innerHTML = html;
 }
