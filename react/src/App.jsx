@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-import PeopleContainer from './components/03/PeopleContainer'
+import { useState } from "react";
+import "./App.css";
+import PeopleContainer from "./components/03/PeopleContainer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -14,9 +14,9 @@ function App() {
         <AvatarCard Name="Matthias" Surname="hagen" Age="19" Profession="Student" Description="Eishocky"/>
         <AvatarCard Name="Valentin" Surname="Gächter" Age="18" Profession="Student" Description="vali <3"/>
       </div>*/}
-      <PeopleContainer/>
-     </>
-  )
+      <PeopleContainer />
+    </>
+  );
 }
 
-export default App
+export default App;
