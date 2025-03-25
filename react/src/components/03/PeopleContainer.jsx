@@ -16,6 +16,7 @@ const colorMap = {
 
 export default function PeopleContainer() {
   const [people, setPeople] = useState([]);
+  const [filteredpeople, setFilteredPeople] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [color, setColor] = useState(0);
   const [clicked, setClicked] = useState(0);
@@ -27,6 +28,7 @@ export default function PeopleContainer() {
           element.picture = `https://picsum.photos/id/${element.id}/200`;
         });
         setPeople(data);
+        setFilteredPeople(data);
         setIsLoading(false);
       })
     );
@@ -50,11 +52,30 @@ export default function PeopleContainer() {
     );
   }
 
-  console.log(color);
+  const filterPeople = (filter) => {
+    let filtered = people.filter(
+      (person) =>
+        person.name.toLowerCase().includes(filter.toLowerCase()) ||
+        person.job.toLowerCase().includes(filter.toLowerCase())
+    );
+    setFilteredPeople(filtered);
+  };
+
   return (
     <div>
-      <div className="flex border-b-3 border-dashed">
+      <div className="flex border-b-3 border-dashed fixed bg-white w-full mt-0">
         <p className="text-4xl">People Container</p>
+        <div>
+          <input
+            className="border-2 p-1 rounded ml-5 my-2 focus-visible:bg-gray-100 focus-visible:outline-0"
+            type="text"
+            placeholder="Filter: Name / Job"
+            onChange={(el) => {
+              console.log(el.target.value);
+              filterPeople(el.target.value);
+            }}
+          />
+        </div>
         <div>
           <button
             className={`p-1 rounded ml-5 my-2 border ${colorMap[color]}`}
@@ -64,8 +85,8 @@ export default function PeopleContainer() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-x-5 gap-y-2 m-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {people.map((element) => {
+      <div className="pt-20 grid grid-cols-1 gap-x-5 gap-y-2 m-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {filteredpeople.map((element) => {
           return (
             <PersonCard
               key={element.id}
