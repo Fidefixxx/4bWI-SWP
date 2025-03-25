@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div className="min-h-screen m-0 p-0">
       {/* <Basics/> */}
       {/*<div class="flex">
         <AvatarCard Name="Matteo" Surname="Kleber" Age="18" Profession="Student" Description="MK on top"/>
@@ -15,7 +15,7 @@ function App() {
         <AvatarCard Name="Valentin" Surname="Gächter" Age="18" Profession="Student" Description="vali <3"/>
       </div>*/}
       <PeopleContainer />
-    </>
+    </div>
   );
 }
 

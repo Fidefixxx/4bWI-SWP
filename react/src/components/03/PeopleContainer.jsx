@@ -46,8 +46,12 @@ export default function PeopleContainer() {
 
   if (isLoading) {
     return (
-      <div>
-        <img className="w-75 h-75" src="https://i.gifer.com/ZKZg.gif" alt="" />
+      <div className="bg-amber-500">
+        <img
+          className="w-75 h-75 bg-amber-500"
+          src="https://i.gifer.com/ZKZg.gif"
+          alt=""
+        />
       </div>
     );
   }
@@ -63,7 +67,7 @@ export default function PeopleContainer() {
 
   return (
     <div>
-      <div className="flex border-b-3 border-dashed fixed bg-white w-full mt-0">
+      <div className="flex border-b-3 border-dashed fixed top-0 p-3 bg-white w-full mt-0">
         <p className="text-4xl">People Container</p>
         <div>
           <input
