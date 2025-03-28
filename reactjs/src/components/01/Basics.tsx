@@ -1,7 +1,7 @@
 import React from "react";
-import Card from './../Card'
-import List from './../List'
-import Button from './../button'
+import Card from "./Card";
+import List from "../02/List";
+import Button from "../02/Button";
 
 export default function Basics() {
   return (
