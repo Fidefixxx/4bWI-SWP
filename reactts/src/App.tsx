@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./App.css";
 import PeopleContainer from "./components/03/PeopleContainer";
 
-
 function App() {
   const [count, setCount] = useState<number>(0); // Typ für useState hinzugefügt
 
