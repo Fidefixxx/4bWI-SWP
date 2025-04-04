@@ -7,11 +7,10 @@ export default function Page1({}: Props) {
   console.log(location);
   return (
     <div>
-      Zu Page 2
-      <Link state="daten" to="/page2">
-        Dashboard
+      <Link className="bg-blue-300 p-3 border" state="daten" to="/page2">
+        Zu Page 2
       </Link>
-      ;
+      <p className="mt-5">{location.state}</p>
     </div>
   );
 }

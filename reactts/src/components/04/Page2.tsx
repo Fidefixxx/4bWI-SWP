@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router";
 type Props = {};
 
 export default function Page2({}: Props) {
   const location = useLocation();
+  const [input, setInput] = useState("");
   console.log(location);
-  var data = "";
   return (
     <div>
-      <input type="text" onChange={(el) => (data = el.toString())}></input>
-      <div className="bg-blue-400 w-min p-3">
+      <input
+        className="border"
+        type="text"
+        onChange={(el) => setInput(el.target.value)}
+      ></input>
+      <Link className="bg-blue-300 p-3 mt-5 border" state={input} to="/page1">
         Zu Page 1
-        <Link state={`${data}`} to="/page1">
-          Dashboard
-        </Link>
-      </div>
+      </Link>
     </div>
   );
 }
